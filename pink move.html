@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>PinkMove Club - Plany treningowe dla kobiet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body { margin: 0; font-family: Arial, Helvetica, sans-serif; background-color: #fff0f6; color: #333333; }
+        header { background: linear-gradient(135deg, #ff5fa2, #ffc1d9); color: #ffffff; text-align: center; padding: 70px 20px; }
+        header h1 { font-size: 48px; margin-bottom: 10px; }
+        header p { font-size: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        .section-title { text-align: center; font-size: 34px; color: #ff3f8e; margin-bottom: 40px; }
+        .benefits { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-bottom: 60px; }
+        .benefit { background-color: #ffffff; padding: 25px; border-radius: 20px; box-shadow: 0 10px 25px rgba(255, 105, 180, 0.2); text-align: center; }
+        .plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
+        .plan { background-color: #ffffff; padding: 25px; border-radius: 22px; box-shadow: 0 12px 30px rgba(255, 105, 180, 0.25); }
+        .plan h3 { color: #ff3f8e; font-size: 22px; }
+        .plan p { font-size: 15px; line-height: 1.5; }
+        .price { font-size: 26px; font-weight: bold; margin: 15px 0; color: #ff1493; }
+        .buy-btn { width: 100%; background-color: #ff5fa2; color: #ffffff; border: none; padding: 14px; border-radius: 30px; font-size: 16px; cursor: pointer; text-decoration: none; display: inline-block; text-align: center; }
+        .buy-btn:hover { background-color: #ff2f85; }
+        .bundle { margin-top: 70px; background-color: #ffe0ec; padding: 40px; border-radius: 30px; text-align: center; }
+        footer { background-color: #ff5fa2; color: #ffffff; text-align: center; padding: 25px; margin-top: 70px; }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>PinkMove Club</h1>
+    <p>Plany treningowe stworzone specjalnie dla kobiet</p>
+</header>
+
+<div class="container">
+
+    <h2 class="section-title">Dlaczego PinkMove Club</h2>
+    <div class="benefits">
+        <div class="benefit">Treningi dopasowane do kobiecego ciała</div>
+        <div class="benefit">Możliwość treningu w domu lub na siłowni</div>
+        <div class="benefit">Jasna struktura i progres</div>
+        <div class="benefit">Skupienie na sylwetce i zdrowiu</div>
+    </div>
+
+    <h2 class="section-title">Wybierz swój plan treningowy</h2>
+    <div class="plans" id="plans"></div>
+
+    <div class="bundle">
+        <h2>Pakiet ALL PinkMove Club</h2>
+        <p>Dostęp do wszystkich 20 planów treningowych w jednej cenie</p>
+        <div class="price">499 zl</div>
+        <a href="LINK_STRIPE_ALL" class="buy-btn" target="_blank">Kup pakiet</a>
+    </div>
+
+</div>
+
+<footer>
+    <p>PinkMove Club - wszystkie prawa zastrzeżone</p>
+</footer>
+
+<script>
+const plansContainer = document.getElementById("plans");
+
+const plans = [
+    { name: "Pink Start", desc: "Lekkie ćwiczenia dla początkujących w domu", price: "79 zl", link: "https://buy.stripe.com/3cI8wRgJqcB16uO8yPfrW0l" },
+    { name: "Soft Shape", desc: "Modelowanie sylwetki bez sprzętu", price: "89 zl", link: "https://buy.stripe.com/6oU14p50I0Sj3iCdT9frW0k" },
+    { name: "Slim Burn", desc: "Spalanie kalorii i redukcja tłuszczu", price: "89 zl", link: "https://buy.stripe.com/28E9AV1Ow1WnbP86qHfrW0j" },
+    { name: "Flat Line", desc: "Brzuch i talia, intensywny plan domowy", price: "99 zl", link: "https://buy.stripe.com/6oUbJ32SA58zdXgdT9frW0i" },
+    { name: "Booty Rise", desc: "Pośladki w domu – kształtowanie i ujędrnianie", price: "109 zl", link: "https://buy.stripe.com/cNi9AV64MasTdXg02jfrW0g" },
+    { name: "Power Legs", desc: "Wzmacnianie nóg i pośladków", price: "109 zl", link: "https://buy.stripe.com/6oUfZjbp6cB1dXgaGXfrW0f" },
+    { name: "Cardio Flow", desc: "Cardio w domu dla energii i wytrzymałości", price: "99 zl", link: "https://buy.stripe.com/4gM5kF78QbwXf1k16nfrW0e" },
+    { name: "Pure Body", desc: "Trening całego ciała bez sprzętu", price: "89 zl", link: "https://buy.stripe.com/bJe5kF78Q7gH3iC16nfrW0d" },
+    { name: "Strong Pink", desc: "Wzmocnienie mięśni, program domowy", price: "99 zl", link: "https://buy.stripe.com/9B6dRb3WE44v7yS4izfrW0c" },
+    { name: "Home Complete", desc: "Kompletny plan w domu, wszystkie partie ciała", price: "129 zl", link: "https://buy.stripe.com/6oU8wReBicB13iC7uLfrW0b" },
+    { name: "Gym Entry", desc: "Początek przygody na siłowni", price: "99 zl", link: "https://buy.stripe.com/eVq14p2SA1WndXgaGXfrW0a" },
+    { name: "Booty Builder", desc: "Kształtowanie pośladków na siłowni", price: "119 zl", link: "https://buy.stripe.com/cNidRb64McB16uO2arfrW09" },
+    { name: "Lower Power", desc: "Dolne partie ciała – nogi i pośladki", price: "129 zl", link: "https://buy.stripe.com/9B68wR9gYeJ906q8yPfrW08" },
+    { name: "Upper Shape", desc: "Góra ciała – ramiona i plecy", price: "119 zl", link: "https://buy.stripe.com/dRmfZj9gYcB14mGbL1frW07" },
+    { name: "Pink Hourglass", desc: "Kształtowanie sylwetki klepsydry", price: "139 zl", link: "https://buy.stripe.com/5kQ8wR78QgRh9H06qHfrW06" },
+    { name: "Lean Force", desc: "Redukcja tkanki tłuszczowej i modelowanie", price: "129 zl", link: "https://buy.stripe.com/4gM9AVfFm44vbP8dT9frW05" },
+    { name: "Strong Form", desc: "Budowanie siły i wydolności", price: "139 zl", link: "https://buy.stripe.com/bJe9AV50IfNdcTc2arfrW04" },
+    { name: "Booty Sculpt", desc: "Intensywny trening pośladków na siłowni", price: "159 zl", link: "https://buy.stripe.com/9B600lbp658z9H04izfrW03" },
+    { name: "Summer Shape", desc: "Plan na formę wakacyjną", price: "149 zl", link: "https://buy.stripe.com/8x24gBctafNdf1k16nfrW02" },
+    { name: "Gym Complete", desc: "Kompletny program siłowni – wszystkie partie ciała", price: "179 zl", link: "https://buy.stripe.com/eVq9AV2SAasTf1kbL1frW01" }
+];
+
+plans.forEach(plan => {
+    plansContainer.innerHTML += `
+        <div class="plan">
+            <h3>${plan.name}</h3>
+            <p>${plan.desc}</p>
+            <div class="price">${plan.price}</div>
+            <a href="${plan.link}" class="buy-btn" target="_blank">Kup teraz</a>
+        </div>
+    `;
+});
+</script>
+
+</body>
+</html>
